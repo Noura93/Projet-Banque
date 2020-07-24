@@ -23,16 +23,12 @@ class Banque:
            
 
     def supprimer_employe(self,matricule):
-        mat = input("veuillez entrez le numéro de matricule que vous souhaitez supprimer")
-        employes = []
-        for i in matricule:
-            if matricule in self.employes:
-                self.employes.remove(matricule)
-                print("le numéro de matricule a été supprimé de la liste des employés",emp.matricule)
-                print(i)
-            else:
-                print("le numéro de matricule ne se trouve plus dans la liste des employés")  
-    
+        for i in self.employes:
+            if matricule == i.matricule:
+                self.employes.remove(i)
+                print("le numéro de matricule a été supprimé de la liste des employés",matricule)
+                break   
+            
     
 class Personne:
     def __init__(self):
@@ -49,10 +45,10 @@ class Employes(Personne):
         self.matricule = ''
 
              
-    def saisie(self):
-        self.nom = input("veuillez saisir le nom de l'employé")
-        self.prenom = input("veuillez saisir le prénom de l'employé")
-        self.date_de_naissance = input("veuillez saisir la date de naissance de l'employé")
-        self.adresse = input("veuillez saisir l'adresse de l'employé")
-        self.matricule = int(input("veuillez saisir le numéro de matricule de l'employé"))
+    def saisie(self,nom,prenom,date_de_naissance,adresse,matricule):
+        self.nom = nom
+        self.prenom = prenom
+        self.date_de_naissance = date_de_naissance
+        self.adresse = adresse
+        self.matricule = matricule
 
